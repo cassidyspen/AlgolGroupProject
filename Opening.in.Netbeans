@@ -1,0 +1,21 @@
+// How to open in netBeans:
+1. Find your personal token
+    - click on profile icon
+    - Settings
+    - Developer Settings
+    - Personal Access Token
+    - Generate token
+    - copy and paste this somewhere, we will need it later
+    
+2. Copy the link for this Repo
+    - Navigate to repo on GitHub website
+    - tab code
+    - code: copy https
+    
+ 3. Clone with terminal
+     - open terminal
+     - navigate to the folder you want this in
+     - do a git clone with the link you copies
+     - change the format to:
+     - https://username:personalaccesstokens@github.com/mlouisewoo/comp230_proj5.git 
+     
