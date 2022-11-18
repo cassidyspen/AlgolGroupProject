@@ -25,6 +25,9 @@ public abstract class Assignment {
 
     /**
      * Returns urgency
+     * 0 - not urgent
+     * 1 - semi-urgent
+     * 2 - urgent
      * 
      * @return int
      */
