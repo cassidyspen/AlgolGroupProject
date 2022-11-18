@@ -1,21 +1,41 @@
-// How to open in netBeans:
+// How to clone in netBeans:
 1. Find your personal token
-    - click on profile icon
-    - Settings
-    - Developer Settings
-    - Personal Access Token
-    - Generate token
-    - copy and paste this somewhere, we will need it later
-    
+   - click on profile icon
+   - Settings
+   - Developer Settings
+   - Personal Access Token
+   - Generate token
+   - copy and paste this somewhere, we will need it later
+
 2. Copy the link for this Repo
-    - Navigate to repo on GitHub website
-    - tab code
-    - code: copy https
-    
- 3. Clone with terminal
-     - open terminal
-     - navigate to the folder you want this in
-     - do a git clone with the link you copies
-     - change the format to:
-     - https://username:personalaccesstokens@github.com/mlouisewoo/comp230_proj5.git 
+   - Navigate to repo on GitHub website
+   - tab code
+   - code: copy https
+
+3. Clone with NetBeans
+    - Under team tab: click remote -> clone
+    - Paste github link under Repository URL
+    - A section will pop up for username and password
+    - For username enter your github username
+    - For password paste your personal access key
+    - For clone into: select the folder you want the project
+    - Click next until the option to open the project
+
+How to push code to the git repository
+1. Do a git pull before attempting a push
+    - Right click on a file in the project
+    - Select Git -> Remote -> Pull…
+    - Double check that the git folder is correct and click next
+2. Add the files you updated
+    - Right click on the files you updated
+    - Select Git -> Add
+3. Commit the files
+    - Right click on a file 
+    - Select Git -> Commit…
+    - Add your message
+4. Git push your commit
+    - Right click on a file
+    - Select Git -> Remote -> Push…
+    - Verify the information is correct and click next
+
      
