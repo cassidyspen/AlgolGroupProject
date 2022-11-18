@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package algol.daily.planner;
-import java.util.ArrayList; 
+ 
 /**
  *
  * @author Almak
@@ -546,36 +546,10 @@ public class ListView extends javax.swing.JFrame {
             }
         });
         
-        public ArrayList<Assignment> assignmentList = new ArrayList<>();
     
-    /**
-     * sorts by urgency
-     */
-    public void urgencySort() {
         
-    }
     
-    /**
-     * sorts by due date
-     */
-    public void daySort() {
-        
-    }
-    
-    /**
-     * sorts by progress
-     */
-    public void progressSort() {
-        
-    }
-    
-    /**
-     * displays assignmentList
-     */
-    public void display(){
-        
-    }
-}
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
