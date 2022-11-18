@@ -1,4 +1,7 @@
 /*
+* 
+* USE LISTVIEW NOT THIS CLASS
+* 
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -11,13 +14,18 @@ import java.util.ArrayList;
  * @author mikey
  */
 public class Organization {
-    private ArrayList<Assignment> assignmentList = new ArrayList<>();
+    private Assignment assignmentList[];
     
+    public Organization(Assignment[] assignmentList){
+        this.assignmentList = assignmentList;
+    }
     /**
      * sorts by urgency
      */
     public void urgencySort() {
-        
+        for(int i=0; i<assignmentList.length; i++){
+            if(assignmentList[i].getUrgency() )
+        }
     }
     
     /**
