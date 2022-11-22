@@ -12,6 +12,7 @@ package algol.daily.planner;
  */
 public abstract class Assignment {
     private int urgency;
+    private int daysLeft;
     private String progress;
     private String dueDate;
     private String subject;
@@ -22,7 +23,25 @@ public abstract class Assignment {
         dueDate = "None";
         subject = "None";
     }
+    
+    public Assignment(String urgency, String dueDate, String subject){
+        if(urgency.equals("Non-Urgent"))
+            this.urgency = 0;
+        else if(urgency.equals("Semi-Urgent"))
+            this.urgency = 1;
+        else 
+            this.urgency = 2;
+        this.dueDate = dueDate;
+        this.subject = subject;
+    }
+    
+    
 
+    /**
+     * Returns
+     * @return 
+     */
+    public abstract String[] getList();
     /**
      * Returns urgency
      * 0 - not urgent

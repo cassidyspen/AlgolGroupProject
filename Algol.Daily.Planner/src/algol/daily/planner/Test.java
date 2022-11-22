@@ -11,12 +11,21 @@ package algol.daily.planner;
  */
 public class Test extends Assignment {
     private String material;
+    private String name;
     
-    public Test() {
-        super();
+    public Test(String urgency, String dueDate, String subject) {
+        super(urgency, dueDate, subject);
+        name = "test";
         material = "None";
     }
-
+    /**
+     * Return list type for table
+     * @return 
+     */
+    public String[] getList(){
+        String[] item = {name, Integer.toString(getUrgency()),getDueDate(),getSubject()};
+        return item;
+    }
     /**
      * Returns material
      * 

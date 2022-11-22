@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class Organization {
     private Assignment assignmentList[];
     
+    
     public Organization(Assignment[] assignmentList){
         this.assignmentList = assignmentList;
     }
@@ -24,7 +25,15 @@ public class Organization {
      */
     public void urgencySort() {
         for(int i=0; i<assignmentList.length; i++){
-            if(assignmentList[i].getUrgency() )
+            for (int j = i + 1; j < assignmentList.length; j++){
+                Assignment temp = assignmentList[0];
+                if (assignmentList[j].getUrgency() < assignmentList[i].getUrgency()){
+                    temp = assignmentList[i];
+                    assignmentList[i] = assignmentList[j];
+                    assignmentList[j] = temp;
+  
+                }
+            }
         }
     }
     
