@@ -11,15 +11,15 @@ package algol.daily.planner;
  * @author mikey
  */
 public abstract class Assignment {
-    private int urgency;
+    protected int urgency;
     private int daysLeft;
-    private String progress;
+    private int progress;
     private String dueDate;
     private String subject;
     
     public Assignment() {
         urgency = 0;
-        progress = "None";
+        progress = 0;
         dueDate = "None";
         subject = "None";
     }
@@ -33,6 +33,7 @@ public abstract class Assignment {
             this.urgency = 2;
         this.dueDate = dueDate;
         this.subject = subject;
+        this.progress = 0;
     }
     
     
@@ -50,8 +51,12 @@ public abstract class Assignment {
      * 
      * @return int
      */
-    public int getUrgency() {
-        return urgency;
+    public String getUrgency() {
+        return switch (urgency) {
+            case 0 -> "Non-Urgent";
+            case 1 -> "Semi-Urgent";
+            default -> "Urgent";
+        };
     }
 
     /**
@@ -67,13 +72,17 @@ public abstract class Assignment {
      * @return String
      */
     public String getProgress() {
-        return progress;
+        return switch (this.progress) {
+            case 0 -> "Not Started";
+            case 1 -> "In Progress";
+            default -> "Complete";
+        };
     }
 
     /**
      * sets progress to given value
      */
-    public void setProgress(String progress) {
+    public void setProgress(int progress) {
         this.progress = progress;
     }
 

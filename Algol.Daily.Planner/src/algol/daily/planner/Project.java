@@ -14,9 +14,15 @@ import javax.swing.text.PasswordView;
 public class Project extends Assignment {
     private String title;
     
-    public Project() {
-        super();
+    public Project(String urgency, String dueDate, String subject) {
+        super(urgency, dueDate,  subject);
         title = "None";
+    }
+    
+    @Override
+    public String[] getList(){
+        String[] item = {getSubject() + " Project", getUrgency(),getProgress(),getDueDate()};
+        return item;
     }
     
     /**

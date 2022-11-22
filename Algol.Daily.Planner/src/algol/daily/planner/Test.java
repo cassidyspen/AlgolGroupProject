@@ -15,15 +15,16 @@ public class Test extends Assignment {
     
     public Test(String urgency, String dueDate, String subject) {
         super(urgency, dueDate, subject);
-        name = "test";
+        name = subject + " test";
         material = "None";
     }
     /**
      * Return list type for table
      * @return 
      */
+    @Override
     public String[] getList(){
-        String[] item = {name, Integer.toString(getUrgency()),getDueDate(),getSubject()};
+        String[] item = {name, getUrgency(),getProgress(),getDueDate(),};
         return item;
     }
     /**

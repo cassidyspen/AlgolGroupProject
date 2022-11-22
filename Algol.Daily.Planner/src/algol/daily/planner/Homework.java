@@ -10,10 +10,15 @@ package algol.daily.planner;
  * @author mikey
  */
 public class Homework extends Assignment {
-    public Homework() {
-        super();
+    public Homework(String urgency, String dueDate, String subject) {
+        super(urgency, dueDate,  subject);
     }
-
+    
+    public String[] getList(){
+        String[] item = {getSubject() + " Homework", getUrgency(),getProgress(),getDueDate()};
+        return item;
+    }
+    
     @Override
     public String toString() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody

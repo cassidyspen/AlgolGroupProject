@@ -27,7 +27,7 @@ public class Organization {
         for(int i=0; i<assignmentList.length; i++){
             for (int j = i + 1; j < assignmentList.length; j++){
                 Assignment temp = assignmentList[0];
-                if (assignmentList[j].getUrgency() < assignmentList[i].getUrgency()){
+                if (assignmentList[j].urgency < assignmentList[i].urgency){
                     temp = assignmentList[i];
                     assignmentList[i] = assignmentList[j];
                     assignmentList[j] = temp;
