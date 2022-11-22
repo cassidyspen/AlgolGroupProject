@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/Users/cassidyspencer/Desktop/comp305/AlgolGroupProject/Algol.Daily.Planner/src/algol/daily/planner/ListView.java</file>
             <file>file:/Users/cassidyspencer/Desktop/comp305/AlgolGroupProject/Algol.Daily.Planner/src/algol/daily/planner/Menu.java</file>
             <file>file:/Users/cassidyspencer/Desktop/comp305/AlgolGroupProject/Algol.Daily.Planner/src/algol/daily/planner/AlgolDailyPlanner.java</file>
@@ -10,6 +11,20 @@
             <file>file:/Users/cassidyspencer/Desktop/comp305/AlgolGroupProject/Algol.Daily.Planner/src/algol/daily/planner/Assignment.java</file>
             <file>file:/Users/cassidyspencer/Desktop/comp305/AlgolGroupProject/Algol.Daily.Planner/src/algol/daily/planner/Organization.java</file>
             <file>file:/Users/cassidyspencer/Desktop/comp305/AlgolGroupProject/Algol.Daily.Planner/src/algol/daily/planner/Test.java</file>
+=======
+<<<<<<< HEAD
+            <file>file:/Users/mikey/Programming/Comp%20305/AlgolGroupProject/Algol.Daily.Planner/src/algol/daily/planner/NewJFrame.java</file>
+            <file>file:/Users/mikey/Programming/Comp%20305/AlgolGroupProject/Algol.Daily.Planner/build.xml</file>
+            <file>file:/Users/mikey/Programming/Comp%20305/AlgolGroupProject/Algol.Daily.Planner/src/algol/daily/planner/Assignment.java</file>
+            <file>file:/Users/mikey/Programming/Comp%20305/AlgolGroupProject/Algol.Daily.Planner/src/algol/daily/planner/Homework.java</file>
+            <file>file:/Users/mikey/Programming/Comp%20305/AlgolGroupProject/Algol.Daily.Planner/src/algol/daily/planner/Organization.java</file>
+            <file>file:/Users/mikey/Programming/Comp%20305/AlgolGroupProject/Algol.Daily.Planner/src/algol/daily/planner/Project.java</file>
+            <file>file:/Users/mikey/Programming/Comp%20305/AlgolGroupProject/Algol.Daily.Planner/src/algol/daily/planner/AlgolDailyPlanner.java</file>
+            <file>file:/Users/mikey/Programming/Comp%20305/AlgolGroupProject/Algol.Daily.Planner/src/algol/daily/planner/Test.java</file>
+=======
+            <file>file:/Users/cassidyspencer/Desktop/comp305/AlgolGroupProject/Algol.Daily.Planner/src/algol/daily/planner/AlgolDailyPlanner.java</file>
+>>>>>>> 9e70cb046db69bf45ae986431c679b6c651d8f4b
+>>>>>>> a41addae3f4eebd15c16280cd3a035f6969dea90
         </group>
     </open-files>
 </project-private>

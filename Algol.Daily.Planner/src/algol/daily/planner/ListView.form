@@ -76,6 +76,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+<<<<<<< HEAD
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -83,6 +84,21 @@
               <EmptySpace max="32767" attributes="0"/>
               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+=======
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+>>>>>>> a41addae3f4eebd15c16280cd3a035f6969dea90
           </Group>
       </Group>
     </DimensionLayout>
@@ -91,9 +107,18 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+<<<<<<< HEAD
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="222" max="-2" attributes="0"/>
+=======
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+>>>>>>> a41addae3f4eebd15c16280cd3a035f6969dea90
           </Group>
       </Group>
     </DimensionLayout>
@@ -213,39 +238,18 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField13">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField1"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField14">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField1"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField15">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField1"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField16">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField1"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField17">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField1"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField18">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField1"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField19">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField1"/>
-              </Properties>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel3">
 
@@ -336,39 +340,27 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField24">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
-                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField24ActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField25">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField26">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField27">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
-                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField27ActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField28">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField29">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
-                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField29ActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField30">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
-                  </Properties>
                 </Component>
                 <Container class="javax.swing.JPanel" name="jPanel4">
 
@@ -455,39 +447,18 @@
                       </Events>
                     </Component>
                     <Component class="javax.swing.JTextField" name="jTextField34">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jTextField31"/>
-                      </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="jTextField35">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jTextField31"/>
-                      </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="jTextField36">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jTextField31"/>
-                      </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="jTextField37">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jTextField31"/>
-                      </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="jTextField38">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jTextField31"/>
-                      </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="jTextField39">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jTextField31"/>
-                      </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="jTextField40">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jTextField31"/>
-                      </Properties>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -589,39 +560,21 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField44">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField31"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField45">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField31"/>
-              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField45ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField46">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField31"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField47">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField31"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField48">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField31"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField49">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField31"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField50">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField31"/>
-              </Properties>
             </Component>
           </SubComponents>
         </Container>
@@ -631,6 +584,14 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Menu"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Exit"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
