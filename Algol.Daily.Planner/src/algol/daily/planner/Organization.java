@@ -1,6 +1,6 @@
 /*
 * 
-* USE LISTVIEW NOT THIS CLASS
+* 
 * 
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -14,23 +14,29 @@ import java.util.ArrayList;
  * @author mikey
  */
 public class Organization {
-    private Assignment assignmentList[];
+    private ArrayList<Assignment> assignmentList= new ArrayList<>();
     
     
-    public Organization(Assignment[] assignmentList){
-        this.assignmentList = assignmentList;
+    public Organization(){
+    }
+    public void addAssignment(Assignment a){
+        assignmentList.add(a);
+    }
+    public ArrayList<Assignment> getAssignments(){
+        return assignmentList;
     }
     /**
      * sorts by urgency
      */
     public void urgencySort() {
-        for(int i=0; i<assignmentList.length; i++){
-            for (int j = i + 1; j < assignmentList.length; j++){
-                Assignment temp = assignmentList[0];
-                if (assignmentList[j].urgency < assignmentList[i].urgency){
-                    temp = assignmentList[i];
-                    assignmentList[i] = assignmentList[j];
-                    assignmentList[j] = temp;
+        for(int i=0; i<assignmentList.size(); i++){
+            for (int j = i + 1; j < assignmentList.size(); j++){
+                Assignment temp = assignmentList.get(0);
+                if (assignmentList.get(j).urgency < assignmentList.get(i).urgency){
+                    temp = assignmentList.get(i);
+                    assignmentList.set(i,assignmentList.get(j));
+                    assignmentList.set(j,temp);
+                   
   
                 }
             }

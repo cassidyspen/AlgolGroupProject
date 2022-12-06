@@ -13,12 +13,14 @@ import javax.swing.table.DefaultTableModel;
  * @author cassidyspencer
  */
 public class Menu extends javax.swing.JFrame {
-
+    Organization org = new Organization();
     /**
      * Creates new form Menu
      */
     public Menu() {
+        
         initComponents();
+        
     }
 
     /**
@@ -59,10 +61,12 @@ public class Menu extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tableList = new javax.swing.JTable();
         deletBtn = new javax.swing.JButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        changeUrgency = new javax.swing.JComboBox<>();
+        changeProgress = new javax.swing.JComboBox<>();
+        changeDate = new javax.swing.JTextField();
+        updateBtn = new javax.swing.JButton();
+        clearBtn = new javax.swing.JButton();
 
         jMenu3.setText("File");
         jMenuBar2.add(jMenu3);
@@ -103,6 +107,11 @@ public class Menu extends javax.swing.JFrame {
         jLabel5.setText("Urgency:");
 
         typeInput.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Project", "Test", "Homework" }));
+        typeInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                typeInputActionPerformed(evt);
+            }
+        });
 
         dateInput.setText("mm/dd/yy");
         dateInput.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -183,7 +192,7 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -204,7 +213,20 @@ public class Menu extends javax.swing.JFrame {
             new String [] {
                 "Assignment", "Urgency", "Progress", "Due Date"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableList.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableListMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tableList);
 
         deletBtn.setText("Delete");
@@ -214,13 +236,28 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jRadioButton1.setText("Urgency");
+        jLabel6.setText("Update Assignment:");
 
-        jRadioButton2.setText("Progress");
+        changeUrgency.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Non-Urgent", "Semi-Urgent", "Urgent" }));
 
-        jRadioButton3.setText("Due Date");
+        changeProgress.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Not Started", "In Progress", "Complete" }));
 
-        jLabel1.setText("Sort By:");
+        changeDate.setText("mm/dd/yyyy");
+
+        updateBtn.setBackground(new java.awt.Color(255, 229, 229));
+        updateBtn.setText("Update");
+        updateBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateBtnActionPerformed(evt);
+            }
+        });
+
+        clearBtn.setText("Clear");
+        clearBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -229,36 +266,49 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(deletBtn)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(deletBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(clearBtn)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton3)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton2)
-                            .addComponent(jLabel1))))
-                .addContainerGap(18, Short.MAX_VALUE))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
+                                    .addComponent(changeUrgency, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(changeDate)
+                                    .addComponent(changeProgress, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(updateBtn)
+                                .addGap(27, 27, 27)))))
+                .addGap(41, 41, 41))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addComponent(deletBtn)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(deletBtn)
+                    .addComponent(clearBtn))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel6)
+                        .addGap(18, 18, 18)
+                        .addComponent(changeUrgency, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton3)))
-                .addContainerGap(16, Short.MAX_VALUE))
+                        .addComponent(changeProgress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(changeDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(updateBtn)))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         jTabbedPane5.addTab("List View", jPanel4);
@@ -269,8 +319,8 @@ public class Menu extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jTabbedPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 586, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addComponent(jTabbedPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 659, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -300,6 +350,10 @@ public class Menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Adds a new assignment to the list
+     * @param evt 
+     */
     private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
         // Add value to table
         String type = typeInput.getSelectedItem().toString();
@@ -314,37 +368,49 @@ public class Menu extends javax.swing.JFrame {
                                         JOptionPane.ERROR_MESSAGE);
         }
         else{
-            DefaultTableModel table = (DefaultTableModel) tableList.getModel();
             Assignment newEntry;
-            switch (type) {
-                case "Test":
-                    newEntry = new Test(urgency, date, subject);
-                    break;
-                case "Project":
-                    newEntry = new Project(urgency, date, subject);
-                    break;
-                default:
-                    newEntry = new Homework(urgency, date, subject);
-                    break;
+            newEntry = switch (type) {
+                case "Test" -> new Test(urgency, date, subject);
+                case "Project" -> new Project(urgency, date, subject);
+                default -> new Homework(urgency, date, subject);
+            };
+            org.addAssignment(newEntry);
+            DefaultTableModel table = (DefaultTableModel) tableList.getModel();
+            table.addRow(newEntry.getList());
             }
-     
-            table.addRow(newEntry.getList());        
-            }
+        
+        
             
         
         
     }//GEN-LAST:event_addBtnActionPerformed
 
+    /**
+     * Uses the Assignment List in Organization object to display the table
+     */
+    void displayRows(){
+        DefaultTableModel table = (DefaultTableModel) tableList.getModel();
+        for(int i=0; i<org.getAssignments().size(); i++){
+            Assignment t = org.getAssignments().get(i);
+            table.addRow(t.getList());
+        }
+    }
+    
     private void subjectInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subjectInputActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_subjectInputActionPerformed
 
+    /**
+     * deletes the selected row
+     * @param evt 
+     */
     private void deletBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletBtnActionPerformed
         // TODO add your handling code here:
         int row = tableList.getSelectedRow();
-        
-        DefaultTableModel table = (DefaultTableModel) tableList.getModel();
-        table.removeRow(row);
+        if(row!=-1){
+            DefaultTableModel table = (DefaultTableModel) tableList.getModel();
+            table.removeRow(row);
+        }
         
     }//GEN-LAST:event_deletBtnActionPerformed
 
@@ -354,6 +420,65 @@ public class Menu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_dateInputMouseClicked
 
+    private void typeInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typeInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_typeInputActionPerformed
+
+    private void tableListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableListMouseClicked
+        // TODO add your handling code here:
+        //get selected row
+        int row = tableList.getSelectedRow();
+        DefaultTableModel table = (DefaultTableModel) tableList.getModel();
+        //set text to selected row
+        changeUrgency.setSelectedItem((String)(table.getValueAt(row, 1)));
+        changeProgress.setSelectedItem((String)(table.getValueAt(row, 2)));
+        changeDate.setText((String)(table.getValueAt(row, 3)));
+    }//GEN-LAST:event_tableListMouseClicked
+
+    private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
+        // Update the table with new values
+        // Create an Assignment for the new values
+        int row = tableList.getSelectedRow();
+        if(row!=-1){
+            DefaultTableModel table = (DefaultTableModel) tableList.getModel();
+            Assignment updated = org.getAssignments().get(row);
+
+            //get updated fields
+            String date = changeDate.getText();
+            String urgency = changeUrgency.getSelectedItem().toString();
+            String progress = changeProgress.getSelectedItem().toString();
+
+            //change the assignment
+            updated.setDueDate(date);
+            updated.setUrgency(urgency);
+            updated.setProgress(progress);
+
+            //display table again
+            clearRows();
+            displayRows();
+        }
+        
+            
+    }//GEN-LAST:event_updateBtnActionPerformed
+
+    private void clearBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtnActionPerformed
+        // TODO add your handling code here:
+        clearRows();
+        for(int i=0; i<org.getAssignments().size(); i++)
+            org.getAssignments().remove(i);
+    }//GEN-LAST:event_clearBtnActionPerformed
+    
+    /**
+     * clear the table
+     */
+    public void clearRows(){
+        DefaultTableModel table = (DefaultTableModel) tableList.getModel();
+        for(int i=table.getRowCount()-1; i>-1; i--){
+            table.removeRow(i);
+            
+        }
+        
+    }
     /**
      * @param args the command line arguments
      */
@@ -396,14 +521,18 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.ButtonGroup buttonGroup5;
+    private javax.swing.JTextField changeDate;
+    private javax.swing.JComboBox<String> changeProgress;
+    private javax.swing.JComboBox<String> changeUrgency;
+    private javax.swing.JButton clearBtn;
     private javax.swing.JTextField dateInput;
     private javax.swing.JButton deletBtn;
     private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
@@ -413,15 +542,13 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane5;
     private javax.swing.JTextField subjectInput;
     private javax.swing.JTable tableList;
     private javax.swing.JComboBox<String> typeInput;
+    private javax.swing.JButton updateBtn;
     private javax.swing.JComboBox<String> urgencyInput;
     // End of variables declaration//GEN-END:variables
 }

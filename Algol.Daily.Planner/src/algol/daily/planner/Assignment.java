@@ -61,9 +61,22 @@ public abstract class Assignment {
 
     /**
      * sets urgency to given value
+     * @param urgency
      */
-    public void setUrgency(int urgency) {
-        this.urgency = urgency;
+    public void setUrgency(String urgency) {
+        switch (urgency){
+            case "Non-Urgent":
+                this.urgency = 0;
+                break;
+            case "Semi-Urgent":
+                this.urgency = 1;
+                break;
+            case "Urgent": 
+                this.urgency = 2;
+                break;
+            default:
+                this.urgency = 0;
+        }
     }
 
     /**
@@ -81,9 +94,22 @@ public abstract class Assignment {
 
     /**
      * sets progress to given value
+     * @param progress
      */
-    public void setProgress(int progress) {
-        this.progress = progress;
+    public void setProgress(String progress) {
+        switch (progress){
+            case "Non Started":
+                this.progress= 0;
+                break;
+            case "In Progress":
+                this.progress = 1;
+                break;
+            case "Complete": 
+                this.progress = 2;
+                break;
+            default:
+                this.progress = 0;
+        }
     }
 
     /**
