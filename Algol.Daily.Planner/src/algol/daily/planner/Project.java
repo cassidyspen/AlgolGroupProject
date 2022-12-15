@@ -4,7 +4,7 @@
  */
 package algol.daily.planner;
 
-import javax.swing.text.PasswordView;
+
 
 /**
  * Subclass of Assignment representing a project
@@ -25,7 +25,8 @@ public class Project extends Assignment {
         return item;
     }
     
-    /**
+    
+     /**
      * Returns title
      * 
      * @return String

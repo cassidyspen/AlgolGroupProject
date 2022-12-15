@@ -4,6 +4,10 @@
  */
 package algol.daily.planner;
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+
 /**
  * Abstract class that acts as a parent for homework/project/test
  * classes.
@@ -12,8 +16,7 @@ package algol.daily.planner;
  */
 public abstract class Assignment {
     protected int urgency;
-    private int daysLeft;
-    private int progress;
+    protected int progress;
     private String dueDate;
     private String subject;
     
@@ -59,6 +62,23 @@ public abstract class Assignment {
         };
     }
 
+    public int getDaysLeft(){
+        // Define the date format
+        String pattern = "MM/dd/yy";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
+
+        // Get today's date
+        LocalDate today = LocalDate.now();
+
+        // Parse the date string and convert it to a LocalDate object
+        String dateString = getDueDate();
+        LocalDate date = LocalDate.parse(dateString, formatter);
+
+        // Calculate the difference between the two dates and get the number of days
+        Period period = Period.between(today, date);
+        int days = period.getDays();
+        return days;
+    }
     /**
      * sets urgency to given value
      * @param urgency

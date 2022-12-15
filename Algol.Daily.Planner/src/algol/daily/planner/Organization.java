@@ -47,6 +47,18 @@ public class Organization {
      * sorts by due date
      */
     public void daySort() {
+        for(int i=0; i<assignmentList.size(); i++){
+            for (int j = i + 1; j < assignmentList.size(); j++){
+                Assignment temp = assignmentList.get(0);
+                if (assignmentList.get(j).getDaysLeft() < assignmentList.get(i).getDaysLeft()){
+                    temp = assignmentList.get(i);
+                    assignmentList.set(i,assignmentList.get(j));
+                    assignmentList.set(j,temp);
+                   
+  
+                }
+            }
+        }
         
     }
     
@@ -54,7 +66,18 @@ public class Organization {
      * sorts by progress
      */
     public void progressSort() {
-        
+        for(int i=0; i<assignmentList.size(); i++){
+            for (int j = i + 1; j < assignmentList.size(); j++){
+                Assignment temp = assignmentList.get(0);
+                if (assignmentList.get(j).progress < assignmentList.get(i).progress){
+                    temp = assignmentList.get(i);
+                    assignmentList.set(i,assignmentList.get(j));
+                    assignmentList.set(j,temp);
+                   
+  
+                }
+            }
+        }
     }
     
     /**

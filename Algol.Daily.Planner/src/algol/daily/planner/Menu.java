@@ -1,15 +1,9 @@
 package algol.daily.planner;
 
-import java.text.DecimalFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Date;
+
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
-import javax.swing.event.TableModelEvent;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -22,7 +16,6 @@ import javax.swing.table.TableModel;
  */
 public class Menu extends javax.swing.JFrame {
     Organization org = new Organization();
-    DecimalFormat df = new DecimalFormat("##/##/##");
     /**
      * Creates new form Menu
      */
@@ -144,10 +137,15 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        dateInput.setText("mm/dd/yy");
+        dateInput.setText("dd/mm/yy");
         dateInput.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 dateInputMouseClicked(evt);
+            }
+        });
+        dateInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dateInputActionPerformed(evt);
             }
         });
 
@@ -464,7 +462,7 @@ public class Menu extends javax.swing.JFrame {
         
         if(!isMatch){
             JOptionPane.showMessageDialog(this,
-                                        "Please enter date as dd/mm/yy",
+                                        "Please enter date as mm/dd/yy",
                                         "Try again",
                                         JOptionPane.ERROR_MESSAGE);
         }
@@ -603,6 +601,10 @@ public class Menu extends javax.swing.JFrame {
         displayRows();
 
     }//GEN-LAST:event_sortProgressBtnActionPerformed
+
+    private void dateInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dateInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dateInputActionPerformed
     
     /**
      * clear the table
