@@ -349,6 +349,12 @@
                                   <Component id="deletBtn" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="clearBtn" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="sortUrgencyBtn" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="sortProgressBtn" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="sortDateBtn" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
@@ -382,6 +388,9 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="deletBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="clearBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="sortUrgencyBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="sortProgressBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="sortDateBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -519,6 +528,30 @@
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clearBtnActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="sortUrgencyBtn">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Sort Urgency"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sortUrgencyBtnActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="sortProgressBtn">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Sort Progress"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sortProgressBtnActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JRadioButton" name="sortDateBtn">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Sort Date"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sortDateBtnActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>

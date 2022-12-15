@@ -1,7 +1,10 @@
 package algol.daily.planner;
 
+import java.util.Arrays;
 import javax.swing.JOptionPane;
+import javax.swing.event.TableModelEvent;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -67,6 +70,9 @@ public class Menu extends javax.swing.JFrame {
         changeDate = new javax.swing.JTextField();
         updateBtn = new javax.swing.JButton();
         clearBtn = new javax.swing.JButton();
+        sortUrgencyBtn = new javax.swing.JRadioButton();
+        sortProgressBtn = new javax.swing.JRadioButton();
+        sortDateBtn = new javax.swing.JRadioButton();
 
         jMenu3.setText("File");
         jMenuBar2.add(jMenu3);
@@ -259,6 +265,27 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        sortUrgencyBtn.setText("Sort Urgency");
+        sortUrgencyBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sortUrgencyBtnActionPerformed(evt);
+            }
+        });
+
+        sortProgressBtn.setText("Sort Progress");
+        sortProgressBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sortProgressBtnActionPerformed(evt);
+            }
+        });
+
+        sortDateBtn.setText("Sort Date");
+        sortDateBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sortDateBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -270,6 +297,12 @@ public class Menu extends javax.swing.JFrame {
                         .addComponent(deletBtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(clearBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(sortUrgencyBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(sortProgressBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(sortDateBtn)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -293,7 +326,10 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(deletBtn)
-                    .addComponent(clearBtn))
+                    .addComponent(clearBtn)
+                    .addComponent(sortUrgencyBtn)
+                    .addComponent(sortProgressBtn)
+                    .addComponent(sortDateBtn))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -467,6 +503,28 @@ public class Menu extends javax.swing.JFrame {
         for(int i=0; i<org.getAssignments().size(); i++)
             org.getAssignments().remove(i);
     }//GEN-LAST:event_clearBtnActionPerformed
+
+    private void sortUrgencyBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortUrgencyBtnActionPerformed
+        // TODO add your handling code here:
+        // Get the TableModel of the table
+        TableModel model = tableList.getModel();
+
+        // Sort the table by the specified column in alphabetical order
+        Arrays.sort(model.getDataVector(), new ColumnSorter(0));
+
+        // Update the table with the sorted data
+        tableList.tableChanged(new TableModelEvent(model));
+    }//GEN-LAST:event_sortUrgencyBtnActionPerformed
+
+    private void sortProgressBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortProgressBtnActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_sortProgressBtnActionPerformed
+
+    private void sortDateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortDateBtnActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_sortDateBtnActionPerformed
     
     /**
      * clear the table
@@ -545,6 +603,9 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane5;
+    private javax.swing.JRadioButton sortDateBtn;
+    private javax.swing.JRadioButton sortProgressBtn;
+    private javax.swing.JRadioButton sortUrgencyBtn;
     private javax.swing.JTextField subjectInput;
     private javax.swing.JTable tableList;
     private javax.swing.JComboBox<String> typeInput;
