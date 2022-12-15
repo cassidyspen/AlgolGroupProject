@@ -12,7 +12,7 @@ import java.time.format.DateTimeFormatter;
  * Abstract class that acts as a parent for homework/project/test
  * classes.
  * 
- * @author mikey
+ * @author all of us
  */
 public abstract class Assignment {
     protected int urgency;
@@ -20,6 +20,9 @@ public abstract class Assignment {
     private String dueDate;
     private String subject;
     
+    /**
+     * construction that initializes variables 0 and None as default 
+     */
     public Assignment() {
         urgency = 0;
         progress = 0;

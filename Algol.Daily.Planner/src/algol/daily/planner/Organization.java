@@ -11,7 +11,7 @@ import java.util.ArrayList;
 /**
  * Organization object represents a list of Assignments
  * 
- * @author mikey
+ * @author all of us
  */
 public class Organization {
     private ArrayList<Assignment> assignmentList= new ArrayList<>();
@@ -19,9 +19,17 @@ public class Organization {
     
     public Organization(){
     }
+    /**
+     * takes in an assignment and add it to the list of assignments
+     * @param a it is an object of class Assignment 
+     */
     public void addAssignment(Assignment a){
         assignmentList.add(a);
     }
+    /**
+     * gets the assignment list
+     * @return assignmentList a list of all the current assignments
+     */
     public ArrayList<Assignment> getAssignments(){
         return assignmentList;
     }

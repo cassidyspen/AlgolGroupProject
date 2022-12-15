@@ -7,13 +7,17 @@ package algol.daily.planner;
 /**
  * A subclass of Assignment representing a Homework assignment
  * 
- * @author mikey
+ * @author all of us
  */
 public class Homework extends Assignment {
     public Homework(String urgency, String dueDate, String subject) {
         super(urgency, dueDate,  subject);
     }
-    
+    /**
+     * TODO
+     * create a list and adds the new assigned homework with its urgency, progress, and due date. 
+     * @return the list of homework
+     */
     public String[] getList(){
         String[] item = {getSubject() + " Homework", getUrgency(),getProgress(),getDueDate()};
         return item;

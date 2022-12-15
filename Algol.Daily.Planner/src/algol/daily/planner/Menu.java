@@ -12,7 +12,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author cassidyspencer
+ * @author all of us
  */
 public class Menu extends javax.swing.JFrame {
     Organization org = new Organization();
@@ -519,6 +519,7 @@ public class Menu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_deletBtnActionPerformed
 
+    
     private void dateInputMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dateInputMouseClicked
         // TODO add your handling code here:
         dateInput.setText("");
