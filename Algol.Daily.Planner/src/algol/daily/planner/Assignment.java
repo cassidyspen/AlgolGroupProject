@@ -9,10 +9,15 @@ import java.time.Period;
 import java.time.format.DateTimeFormatter;
 
 /**
- * Abstract class that acts as a parent for homework/project/test
+ * Description: Abstract class that acts as a parent for homework/project/test
  * classes.
  * 
+ * File: Assignment.java
  * @author team Algol
+ * Class: COMP-305 FA22
+ * Prof: A. Nuzen
+ * 
+ * Purpose: Allow user to organize assignments
  */
 public abstract class Assignment {
     protected int urgency;
@@ -45,17 +50,26 @@ public abstract class Assignment {
     
 
     /**
-     * Returns
+     * to be overridden in subclasses
      * @return 
      */
     public abstract String[] getList();
+    
+    /**
+     * Returns dueDate
+     * 
+     * @return String
+     */
+    public String getDueDate() {
+        return dueDate;
+    }
     /**
      * Returns urgency
      * 0 - not urgent
      * 1 - semi-urgent
      * 2 - urgent
      * 
-     * @return int
+     * @return String string representation
      */
     public String getUrgency() {
         return switch (urgency) {
@@ -65,6 +79,34 @@ public abstract class Assignment {
         };
     }
 
+    /**
+     * Returns Progress
+     * 0 - Not Started
+     * 1 - In Progress
+     * 2 - Complete
+     * 
+     * @return String string representation
+     */
+    public String getProgress() {
+        return switch (this.progress) {
+            case 0 -> "Not Started";
+            case 1 -> "In Progress";
+            default -> "Complete";
+        };
+    }
+    
+    /**
+     * Returns subject
+     * 
+     * @return String
+     */
+    public String getSubject() {
+        return subject;
+    }
+    /**
+     * Gets the number of days until the assignment is due using today's date
+     * @return int number of days until assignment dueDate
+     */
     public int getDaysLeft(){
         // Define the date format
         String pattern = "MM/dd/yy";
@@ -102,18 +144,7 @@ public abstract class Assignment {
         }
     }
 
-    /**
-     * Returns progress
-     * 
-     * @return String
-     */
-    public String getProgress() {
-        return switch (this.progress) {
-            case 0 -> "Not Started";
-            case 1 -> "In Progress";
-            default -> "Complete";
-        };
-    }
+    
 
     /**
      * sets progress to given value
@@ -136,46 +167,21 @@ public abstract class Assignment {
     }
 
     /**
-     * Returns dueDate
-     * 
-     * @return String
-     */
-    public String getDueDate() {
-        return dueDate;
-    }
-
-    /**
      * sets dueDate to given value
+     * @param dueDate
      */
     public void setDueDate(String dueDate) {
         this.dueDate = dueDate;
     }
 
-    /**
-     * Returns subject
-     * 
-     * @return String
-     */
-    public String getSubject() {
-        return subject;
-    }
+
 
     /**
      * sets subject to given value
+     * @param subject
      */
     public void setSubject(String subject) {
         this.subject = subject;
     }
-    
-    @Override
-    public abstract boolean equals(Object other);
-    @Override
-    public abstract String toString();
-    
-    
-    
-    
-            
-    
-    
+   
 }

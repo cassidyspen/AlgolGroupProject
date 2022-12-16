@@ -4,33 +4,31 @@
  */
 package algol.daily.planner;
 
+
 /**
- * A subclass of Assignment representing a Homework assignment
+ * Description: A subclass of Assignment representing a Homework assignment
  * 
+ * File: Homework.java
  * @author team Algol
+ * Class: COMP-305 FA22
+ * Prof: A. Nuzen
+ * 
+ * Purpose: allow the user to organize homework
  */
 public class Homework extends Assignment {
     public Homework(String urgency, String dueDate, String subject) {
         super(urgency, dueDate,  subject);
     }
     /**
-     * TODO
-     * create a list and adds the new assigned homework with its urgency, progress, and due date. 
+     * 
+     * create a string list with the assigned homework with its urgency, 
+     * progress, and due date to use for the table
      * @return the list of homework
      */
+    @Override
     public String[] getList(){
         String[] item = {getSubject() + " Homework", getUrgency(),getProgress(),getDueDate()};
         return item;
     }
-    
-    @Override
-    public String toString() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public boolean equals(Object other) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
+ 
 }

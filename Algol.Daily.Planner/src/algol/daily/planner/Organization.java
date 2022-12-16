@@ -1,17 +1,23 @@
 /*
 * 
 * 
-* 
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package algol.daily.planner;
 import java.util.ArrayList; 
 
+
 /**
- * Organization object represents a list of Assignments
+ * Description: Organization class
  * 
+ * File: Organization.java
  * @author team Algol
+ * Class: COMP-305 FA22
+ * Prof: A. Nuzen
+ * Description: Organization class
+ * Purpose: Contains a list of assignments with methods to sort so it the
+ *             assignments can be kept track of easily
  */
 public class Organization {
     private ArrayList<Assignment> assignmentList= new ArrayList<>();
@@ -21,7 +27,7 @@ public class Organization {
     }
     /**
      * takes in an assignment and add it to the list of assignments
-     * @param a it is an object of class Assignment 
+     * @param a Assignment object
      */
     public void addAssignment(Assignment a){
         assignmentList.add(a);
@@ -86,12 +92,5 @@ public class Organization {
                 }
             }
         }
-    }
-    
-    /**
-     * displays assignmentList
-     */
-    public void display(){
-        
     }
 }

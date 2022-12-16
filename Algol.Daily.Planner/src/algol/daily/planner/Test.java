@@ -5,9 +5,14 @@
 package algol.daily.planner;
 
 /**
- * A subclass of Assignment representing a due test
- *
+ * Description: A subclass of Assignment representing a Test assignment
+ * 
+ * File: Test.java
  * @author team Algol
+ * Class: COMP-305 FA22
+ * Prof: A. Nuzen
+ * 
+ * Purpose: allow the user to organize tests
  */
 public class Test extends Assignment {
     private String material;
@@ -19,40 +24,14 @@ public class Test extends Assignment {
         material = "None";
     }
     /**
-     * Return list type for table
-     * @return 
+     * 
+     * create a string list with the assigned test with its urgency, 
+     * progress, and due date to use for the table
+     * @return string list
      */
     @Override
     public String[] getList(){
         String[] item = {name, getUrgency(),getProgress(),getDueDate(),};
         return item;
-    }
-    /**
-     * Returns material
-     * 
-     * @return String
-     */
-    public String getMaterial() {
-        return material;
-    }
-
-    /**
-     * Sets material to given value
-     * @param material 
-     */
-    public void setMaterial(String material) {
-        this.material = material;
-    }
-
-    @Override
-    public String toString() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public boolean equals(Object other) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
-    
+    }  
 }

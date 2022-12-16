@@ -11,11 +11,13 @@ import javax.swing.table.DefaultTableModel;
  */
 
 /**
+ * Description: Main Program for the Algol Daily Planner
+ * 
  * File: Menu.java
  * @author team Algol
  * Class: COMP-305 FA22
  * Prof: A. Nuzen
- * Description: Main Program for the Algol Daily Planner
+ * 
  * Purpose: Create a User interface to allow the user to organize their class assignments
  */
 public class Menu extends javax.swing.JFrame {
