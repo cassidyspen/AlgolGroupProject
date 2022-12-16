@@ -7,7 +7,7 @@ package algol.daily.planner;
 /**
  * A subclass of Assignment representing a due test
  *
- * @author mikey
+ * @author team Algol
  */
 public class Test extends Assignment {
     private String material;

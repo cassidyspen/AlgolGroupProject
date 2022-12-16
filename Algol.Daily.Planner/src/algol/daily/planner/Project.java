@@ -9,7 +9,7 @@ package algol.daily.planner;
 /**
  * Subclass of Assignment representing a project
  *
- * @author all of us
+ * @author team Algol
  */
 public class Project extends Assignment {
     private String title;

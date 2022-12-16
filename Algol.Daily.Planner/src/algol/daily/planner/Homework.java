@@ -7,7 +7,7 @@ package algol.daily.planner;
 /**
  * A subclass of Assignment representing a Homework assignment
  * 
- * @author all of us
+ * @author team Algol
  */
 public class Homework extends Assignment {
     public Homework(String urgency, String dueDate, String subject) {

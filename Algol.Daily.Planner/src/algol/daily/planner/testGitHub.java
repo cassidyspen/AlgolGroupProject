@@ -6,7 +6,7 @@ package algol.daily.planner;
 
 /**
  *
- * @author cassidyspencer
+ * @author team Algol
  */
 public class testGitHub {
     

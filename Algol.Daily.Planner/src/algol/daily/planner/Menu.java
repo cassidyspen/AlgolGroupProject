@@ -11,13 +11,17 @@ import javax.swing.table.DefaultTableModel;
  */
 
 /**
- *
- * @author all of us
+ * File: Menu.java
+ * @author team Algol
+ * Class: COMP-305 FA22
+ * Prof: A. Nuzen
+ * Description: Main Program for the Algol Daily Planner
+ * Purpose: Create a User interface to allow the user to organize their class assignments
  */
 public class Menu extends javax.swing.JFrame {
     Organization org = new Organization();
     /**
-     * Creates new form Menu
+     * Creates new form Menu, GUI to interact 
      */
     public Menu() {
         //initialize components
@@ -443,7 +447,8 @@ public class Menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     /**
-     * Adds a new assignment to the list
+     * 
+     * Adds a new assignment to the list when the add button is clicked
      * @param evt 
      */
     private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
@@ -457,6 +462,7 @@ public class Menu extends javax.swing.JFrame {
         String regex = "^([0-9]{2})/([0-9]{2})/([0-9]{2})$";
         boolean isMatch = date.matches(regex);
         
+        //input validation
         if(!isMatch){
             JOptionPane.showMessageDialog(this,
                                         "Please enter date as mm/dd/yy",
@@ -469,6 +475,7 @@ public class Menu extends javax.swing.JFrame {
                                         "Try again",
                                         JOptionPane.ERROR_MESSAGE);
         }
+        //create new assignment, add to assignment list in organization object 
         else{
             Assignment newEntry;
             newEntry = switch (type) {
@@ -494,15 +501,15 @@ public class Menu extends javax.swing.JFrame {
     }
     
     private void subjectInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subjectInputActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_subjectInputActionPerformed
 
     /**
-     * deletes the selected row
+     * deletes the selected row when delete button is clicked
      * @param evt 
      */
     private void deletBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletBtnActionPerformed
-        // TODO add your handling code here:
+        // sdelete selected row
         int row = tableList.getSelectedRow();
         if(row!=-1){
             DefaultTableModel table = (DefaultTableModel) tableList.getModel();
@@ -512,20 +519,21 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_deletBtnActionPerformed
     
     private void dateInputMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dateInputMouseClicked
-        // TODO add your handling code here:
+        // clear date format holder, so user can input date
         dateInput.setText("");
         
     }//GEN-LAST:event_dateInputMouseClicked
 
     private void typeInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typeInputActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_typeInputActionPerformed
     /**
-     * drops down list to change urgency, progress, and due date after highlighting a specific row
+     * change values in update assignment palate to change urgency, progress, and due date 
+     * after highlighting a specific row
      * @param evt mouse click
      */
     private void tableListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableListMouseClicked
-        // TODO add your handling code here:
+
         //get selected row
         int row = tableList.getSelectedRow();
         DefaultTableModel table = (DefaultTableModel) tableList.getModel();
@@ -535,7 +543,7 @@ public class Menu extends javax.swing.JFrame {
         changeDate.setText((String)(table.getValueAt(row, 3)));
     }//GEN-LAST:event_tableListMouseClicked
     /**
-     * TODO
+     * Updates the selected row with the new information added by the user
      * @param evt 
      */
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
@@ -613,7 +621,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_sortProgressBtnActionPerformed
 
     private void dateInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dateInputActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_dateInputActionPerformed
     
     /**
@@ -628,6 +636,7 @@ public class Menu extends javax.swing.JFrame {
         
     }
     /**
+     * Main program for the user can run the project, sets the Menu UI to visible
      * @param args the command line arguments
      */
     public static void main(String args[]) {

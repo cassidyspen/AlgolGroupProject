@@ -11,7 +11,7 @@ import java.util.ArrayList;
 /**
  * Organization object represents a list of Assignments
  * 
- * @author all of us
+ * @author team Algol
  */
 public class Organization {
     private ArrayList<Assignment> assignmentList= new ArrayList<>();

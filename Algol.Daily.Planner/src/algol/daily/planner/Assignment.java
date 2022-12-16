@@ -12,7 +12,7 @@ import java.time.format.DateTimeFormatter;
  * Abstract class that acts as a parent for homework/project/test
  * classes.
  * 
- * @author all of us
+ * @author team Algol
  */
 public abstract class Assignment {
     protected int urgency;
