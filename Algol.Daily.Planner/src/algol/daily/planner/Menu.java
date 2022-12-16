@@ -27,10 +27,8 @@ public class Menu extends javax.swing.JFrame {
         ButtonGroup group = new ButtonGroup();
         group.add(sortDateBtn);
         group.add(sortProgressBtn);
-        group.add(sortUrgencyBtn);
-        
+        group.add(sortUrgencyBtn);   
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -444,7 +442,6 @@ public class Menu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
     /**
      * Adds a new assignment to the list
      * @param evt 
@@ -482,12 +479,7 @@ public class Menu extends javax.swing.JFrame {
             org.addAssignment(newEntry);
             DefaultTableModel table = (DefaultTableModel) tableList.getModel();
             table.addRow(newEntry.getList());
-            }
-        
-        
-            
-        
-        
+            }           
     }//GEN-LAST:event_addBtnActionPerformed
 
     /**
@@ -518,7 +510,6 @@ public class Menu extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_deletBtnActionPerformed
-
     
     private void dateInputMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dateInputMouseClicked
         // TODO add your handling code here:
@@ -529,7 +520,10 @@ public class Menu extends javax.swing.JFrame {
     private void typeInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typeInputActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_typeInputActionPerformed
-
+    /**
+     * drops down list to change urgency, progress, and due date after highlighting a specific row
+     * @param evt mouse click
+     */
     private void tableListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableListMouseClicked
         // TODO add your handling code here:
         //get selected row
@@ -540,7 +534,10 @@ public class Menu extends javax.swing.JFrame {
         changeProgress.setSelectedItem((String)(table.getValueAt(row, 2)));
         changeDate.setText((String)(table.getValueAt(row, 3)));
     }//GEN-LAST:event_tableListMouseClicked
-
+    /**
+     * TODO
+     * @param evt 
+     */
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
         // Update the table with new values
         // Create an Assignment for the new values
@@ -566,14 +563,20 @@ public class Menu extends javax.swing.JFrame {
         
             
     }//GEN-LAST:event_updateBtnActionPerformed
-
+    /**
+     * clears the table and removes assignments form the list
+     * @param evt mouse click 
+     */
     private void clearBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtnActionPerformed
         // TODO add your handling code here:
         clearRows();
         for(int i=0; i<org.getAssignments().size(); i++)
             org.getAssignments().remove(i);
     }//GEN-LAST:event_clearBtnActionPerformed
-
+    /**
+     * sorts the table by urgency
+     * @param evt mouse click
+     */
     private void sortUrgencyBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortUrgencyBtnActionPerformed
         //Sort the list by urgency
         org.urgencySort();
@@ -582,7 +585,10 @@ public class Menu extends javax.swing.JFrame {
         clearRows();
         displayRows();
     }//GEN-LAST:event_sortUrgencyBtnActionPerformed
-
+    /**
+     * sorts the table by date
+     * @param evt mouse click
+     */
     private void sortDateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortDateBtnActionPerformed
         //Sort the list by urgency
         org.daySort();
@@ -592,7 +598,10 @@ public class Menu extends javax.swing.JFrame {
         displayRows();
 
     }//GEN-LAST:event_sortDateBtnActionPerformed
-
+    /**
+     * sorts the table by progress
+     * @param evt mouse click
+     */
     private void sortProgressBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortProgressBtnActionPerformed
     //Sort the list by urgency
         org.progressSort();
@@ -608,7 +617,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_dateInputActionPerformed
     
     /**
-     * clear the table
+     * clears the table
      */
     public void clearRows(){
         DefaultTableModel table = (DefaultTableModel) tableList.getModel();
